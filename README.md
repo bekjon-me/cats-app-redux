@@ -3,7 +3,7 @@
 <div align="center">
   <br/>
 
-  <h3><b>Custom react router using History api</b></h3>
+  <h3><b>Cats app using react and redux</b></h3>
 
 </div>
 
@@ -33,7 +33,7 @@
 
 # 📖 Personal portfolio <a name="about-project"></a>
 
-This is the personal **Custom react router example**. You can find more about me here.
+This is the **Cats app**.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -43,6 +43,8 @@ This is the personal **Custom react router example**. You can find more about me
   <summary>Client</summary>
   <ul>
     <li><a href="https://beta.reactjs.org/">React</a></li>
+    <li><a href="https://redux.js.org/">REdux</a></li>
+
   </ul>
 </details>
 
