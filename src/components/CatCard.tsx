@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { feedCat } from "../store/CatsSlice";
+import { feedCat } from "../app/CatsSlice";
 interface IProps {
   cat: {
     id: string;

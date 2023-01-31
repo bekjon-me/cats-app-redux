@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { Dispatch, useEffect } from "react";
 
 import CatCard from "./components/CatCard";
 import NeighborCatCard from "./components/NeighborCatCard";
@@ -7,13 +7,14 @@ import catRandom from "./utils/catRandom";
 import catRandomImage from "./utils/catRandomImage";
 import hasCollar from "./utils/collarRandom";
 import colorRandom from "./utils/colorRandom";
-import { useDispatch, useSelector } from "react-redux";
-import { Cat } from "./store/@types.cats";
-import { addCat, minusOne, selectCats } from "./store/CatsSlice";
+import { Cat } from "./app/@types.cats";
+import { addCat, minusOne, selectCats } from "./app/CatsSlice";
+import { useAppDispatch, useAppSelector } from "./app/hooks";
+import { AppDispatch } from "./app/store";
 
 export default function App() {
-  const cats = useSelector(selectCats);
-  const dispatch = useDispatch();
+  const cats = useAppSelector(selectCats);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     const interval: NodeJS.Timer = setInterval(() => {

@@ -1,4 +1,4 @@
-import { createSlice, Slice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import { PayloadAction } from "react-redux-typescript";
 import { Cat, CatID, CatsState } from "./@types.cats";
 import { RootState } from "./store";
@@ -8,7 +8,7 @@ const initialState = {
   catList: [],
 } as CatsState;
 
-const todoSlice = createSlice({
+const CatsSlice = createSlice({
   // name used in action types
   name: "cats",
   // initial state
@@ -21,7 +21,7 @@ const todoSlice = createSlice({
     },
 
     minusOne: (state) => {
-      state.catList.map((cat) => {
+      state.catList.forEach((cat) => {
         if (cat.feedTime > 0) {
           cat.feedTime -= 1;
         }
@@ -30,7 +30,7 @@ const todoSlice = createSlice({
 
     // feed cat with id
     feedCat: (state, action: PayloadAction<string, CatID>) => {
-      state.catList.map((cat) => {
+      state.catList.forEach((cat) => {
         if (cat.id === action.payload) {
           cat.feedTime = 35;
         }
@@ -39,8 +39,8 @@ const todoSlice = createSlice({
   },
 });
 
-export const { addCat, minusOne, feedCat } = todoSlice.actions;
-export default todoSlice.reducer;
+export const { addCat, minusOne, feedCat } = CatsSlice.actions;
+export default CatsSlice.reducer;
 
 // create and export the selector
-export const selectCats = (state: RootState) => state.cats.catList;
+export const selectCats = (state: RootState) => state.catList;
